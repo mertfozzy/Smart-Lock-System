@@ -1,4 +1,4 @@
-![S](https://hizliresim.com/DAl4AG)
+![S](https://cdn.ozdisan.com/ETicaret_Dosya/536999_2319247.jpg)
 
 
 
