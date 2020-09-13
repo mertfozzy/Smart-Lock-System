@@ -1,4 +1,4 @@
-![SmartLock](https://hizliresim.com/DAl4AG)
+![S](https://hizliresim.com/DAl4AG)
 
 
 
