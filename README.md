@@ -1,4 +1,4 @@
-![S](https://cdn.ozdisan.com/ETicaret_Dosya/536999_2319247.jpg)
+![S](https://ae01.alicdn.com/kf/HTB1PfeCazDuK1Rjy1zjq6zraFXa3/NFC-Kalkan-RFID-RC522-Mod-l-RF-IC-Kart-Sens-r-S50-RFID-Ak-ll-Kart.jpg_q50.jpg)
 
 
 
