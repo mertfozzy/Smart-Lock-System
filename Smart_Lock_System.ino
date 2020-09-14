@@ -53,6 +53,8 @@
 #include <Servo.h>
 #include <RFID.h>
 
+#include "pitches.h"
+
 
 //Define Component to Arduino Pins
 #define SS_PIN 10
@@ -76,7 +78,18 @@ int My_RFID_Tag[5] = {42,5,215,129,121};
 
 //variable to hold your Access_card
 boolean My_Card = false;  
-   
+
+// notes in the melody, taken from:
+//File -> Examples -> Digital -> ToneMelody
+int melody[] = {
+  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+};
+
+// note durations: 4 = quarter note, 8 = eighth note, etc.:
+int noteDurations[] = {
+  4, 8, 8, 4, 4, 4, 4, 4
+};
+
 
 
 void setup() 
@@ -110,6 +123,7 @@ void loop()
   lcd.print("Sisteme");
   lcd.setCursor(0,1);
   lcd.print("Hosgeldiniz!");
+  
   
   //Check if any RFID Tags Detected or not?
   if( rfid.isCard() )
@@ -158,7 +172,30 @@ void loop()
             lcd.print("Giris Onaylandi");
             lcd.setCursor(0,1);
             lcd.print(" ");
-            delay(2000);                        
+            delay(2000); 
+
+            //Turn on the Green LED as an indication of permission is given 
+            //to access the room.
+            digitalWrite(Green_LED,HIGH);
+            
+           
+            int i = 0;
+            while(i < 2)
+            {
+              for (int thisNote = 0; thisNote < 12; thisNote++) 
+              {          
+                
+                int noteDuration = 1000 / noteDurations[thisNote];
+                tone(8, melody[thisNote], noteDuration);                        
+                
+                int pauseBetweenNotes = noteDuration * 1.30;
+                delay(pauseBetweenNotes);              
+                noTone(8);
+              }
+              i =  i + 1;
+              delay(500);              
+            }
+            delay(1000);    
             
             
 
