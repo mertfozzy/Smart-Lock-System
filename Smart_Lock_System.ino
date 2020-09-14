@@ -180,12 +180,12 @@ void loop()
             
            
             int i = 0;
-            while(i < 2)
+            while(i < 1)
             {
               for (int thisNote = 0; thisNote < 12; thisNote++) 
               {          
                 
-                int noteDuration = 1000 / noteDurations[thisNote];
+                int noteDuration = 500 / noteDurations[thisNote];
                 tone(8, melody[thisNote], noteDuration);                        
                 
                 int pauseBetweenNotes = noteDuration * 1.30;
@@ -209,9 +209,9 @@ void loop()
             delay(2000);
             lcd.clear();
 
-            //Give 10 Sec delay to enter into room
+            //Give 5 Sec delay to enter into room
             //After that door will again closed!
-            for(int i = 10; i > 0; i--)
+            for(int i = 5; i > 0; i--)
             {
               lcd.print(i);
               lcd.print(" saniye sonra");
